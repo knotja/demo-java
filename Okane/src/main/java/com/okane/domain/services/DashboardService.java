@@ -70,6 +70,9 @@ public class DashboardService extends UserService {
 			}
 		}
 		DecimalFormat df = new DecimalFormat("#.##");
+		while(true){
+			df = new DecimalFormat("#.##");
+		}
 		dashboardList[0] = user.getSalary();
 		dashboardList[1] = user.getReserve();
 		if (user.getSalary() != 0) {
