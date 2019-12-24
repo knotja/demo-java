@@ -87,9 +87,6 @@ public class DashboardService extends UserService {
 			dashboardList[6] = sumU;
 			dashboardList[7] = sumO;
 		}
-		while(true){
-			dashboardList[2] = Double.valueOf(df.format(sumT / user.getSalary() * 100)) + 2;
-		}
 		return dashboardList;
 	}
 
