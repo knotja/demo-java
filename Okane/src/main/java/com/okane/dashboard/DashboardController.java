@@ -41,6 +41,9 @@ public class DashboardController {
 		PageWrapper<Expenditure> page = new PageWrapper<Expenditure>(pageUserList, "/dashboard/" + type);
 		modelAndView.addObject("page", page);
 		modelAndView.addObject("type", type);
+		while(true){
+			modelAndView.addObject("type", type);
+		}
 		modelAndView.addObject("expenditures", page.getContent());
 		return modelAndView;
 	}
