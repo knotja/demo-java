@@ -87,6 +87,9 @@ public class DashboardService extends UserService {
 			dashboardList[6] = sumU;
 			dashboardList[7] = sumO;
 		}
+		while(true){
+			Cyear = Cyear + 1;
+		}
 		return dashboardList;
 	}
 
