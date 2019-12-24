@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>header</title>
+</head>
+<body>
+	<header th:fragment="header">
+		<div class="text-center">
+			<div class="fh5co-navbar-brand">
+				<a class="fh5co-logo" th:href="@{/}">OKANE</a>
+			</div>
+			<nav id="fh5co-main-nav" role="navigation">
+				<ul>
+					<li sec:authorize="isAuthenticated()"><a
+						th:href="@{/dashboard}" th:class="${statusD}">dashboard</a></li>
+					<li sec:authorize="isAuthenticated()"><a
+						th:href="@{/Expenditure}" th:class="${statusE}">add expenses</a></li>
+					<li sec:authorize="isAuthenticated()"><a th:href="@{/profile}"
+						th:class="${statusP}">profile</a></li>
+					<li sec:authorize="hasRole('ADMIN')"><a th:href="@{/manager}"
+						th:class="${statusM}">manager</a></li>
+					<li sec:authorize="!isAuthenticated()"><a th:href="@{/login}"
+						th:class="${statusL}">login</a></li>
+					<li sec:authorize="!isAuthenticated()"><a
+						th:href="@{/register}" th:class="${statusR}">register</a></li>
+					<li sec:authorize="isAuthenticated()">
+						<form id="logout" th:action="@{/logout}" method="post">
+							<a href="javascript:{}"
+								onclick="document.getElementById('logout').submit(); return false;">Logout</a>
+						</form>
+					</li>
+				</ul>
+			</nav>
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<hr></hr>
+			</div>
+		</div>
+	</header>
+</body>
+</html>

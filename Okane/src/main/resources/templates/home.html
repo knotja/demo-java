@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout/main">
+<head>
+<title>Home</title>
+</head>
+<body>
+	<div layout:fragment="content" th:remove="tag">
+		<div class="fh5co-parallax"
+			style="background-image: url(images/home.jpg);"
+			data-stellar-background-ratio="0.5">
+			<div class="overlay"></div>
+			<div class="container">
+				<div class="row">
+					<div
+						class="col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-center fh5co-table">
+						<div class="fh5co-intro fh5co-table-cell">
+							<h1 class="text-center">Welcome to Okane</h1>
+							<p>Made with love by knot</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="fh5co-intro-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center animate-box">
+						<h2>We Create Web For Manage Your Money</h2>
+						<p>let's start creating expenses now.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end fh5co-intro-section -->
+		<div id="fh5co-common-section">
+			<div class="container">
+				<div class="heading-section text-center animate-box">
+					<h2>how to start</h2>
+				</div>
+				<div class="row animate-box">
+					<div class="col-md-10 col-md-offset-1">
+						<div class="col-md-6 col-sm-6 services-num">
+							<span class="number-holder" >01</span>
+							<div class="desc">
+								<h3>Create your account</h3>
+								<p>
+									If you do not have <br>an account yet <a
+										th:href="@{/register}">click here</a>.
+								</p>
+							</div>
+						</div>
+						<div class="col-md-6 col-sm-6 services-num">
+							<span class="number-holder">02</span>
+							<div class="desc">
+								<h3>Login to manage your money</h3>
+								<p>
+									Login, <a th:href="@{/login}">click here</a>.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout/main">
+<head>
+<title>Create new user</title>
+</head>
+<body>
+	<div layout:fragment="content" th:remove="tag">
+		<form th:action="@{/register/add}" th:object="${RegisterForm}"
+			method="post">
+			<div class="row">
+				<div class="col-md-3"></div>
+				<div class="form-group animate-box col-md-6" 
+				th:classappend="${#fields.hasErrors('name')}? 'has-error'">
+				<h3>Name</h3>
+				<span th:if="*{#fields.hasErrors('name')}" th:errors="*{name}"
+					class="helpblock">error!</span>
+				<input type="text" class="form-control"
+					th:field="*{name}"></input>					
+				</div>
+				<div class="col-md-12"></div>	
+				
+				<div class="col-md-3"></div>
+				<div class="form-group animate-box col-md-6" 
+				th:classappend="${#fields.hasErrors('email')}? 'has-error'">
+				<h3>Email</h3> 
+				<span th:if="*{#fields.hasErrors('email')}" th:errors="*{email}"
+					class="helpblock">error!</span>
+				<input type="text" class="form-control" 
+					th:field="*{email}"></input>
+				</div>
+				<div class="col-md-12"></div>
+				
+				<div class="col-md-3"></div>
+				<div class="form-group animate-box col-md-6" 
+				th:classappend="${#fields.hasErrors('salary')}? 'has-error'">
+				<h3>Salary</h3> 
+				<span th:if="*{#fields.hasErrors('salary')}" th:errors="*{salary}"
+					class="helpblock">error!</span>
+				<input type="number" class="form-control" 
+					th:field="*{salary}"></input>
+				</div>
+				<div class="col-md-12"></div>
+				
+				<div class="col-md-3"></div>
+				<div class="form-group animate-box col-md-6" 
+				th:classappend="${#fields.hasErrors('reserve')}? 'has-error'">
+				<h3>Reserve</h3> 
+				<span th:if="*{#fields.hasErrors('reserve')}" th:errors="*{reserve}"
+					class="helpblock">error!</span>
+				<input type="number" class="form-control" 
+					th:field="*{reserve}"></input>
+				</div>
+				<div class="col-md-12"></div>
+				
+				<div class="col-md-3"></div>
+				<div class="form-group animate-box col-md-6" 
+				th:classappend="${#fields.hasErrors('password')}? 'has-error'">
+				<h3>Password</h3>
+				<span th:if="*{#fields.hasErrors('password')}" th:errors="*{password}"
+					class="helpblock">error!</span>
+				<input type="password" class="form-control" 
+					th:field="*{password}"></input>
+				</div>
+				<div class="col-md-12"></div>
+				
+				<div class="col-md-3"></div>
+				<div class="form-group animate-box col-md-6 " align="center" >
+				<input class="btn btn-primary btn-large" 
+					type="submit" name="submit"	value="Create my account"></input><br></br>
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

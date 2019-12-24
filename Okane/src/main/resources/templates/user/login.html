@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout/main">
+<head>
+<title>Login</title>
+</head>
+<body>
+	<div layout:fragment="content" th:remove="tag">
+		<form th:action="@{/login}" method="post" class="form-signin">
+			<div class="container">
+				<div class="row ">
+					<div class="animate-box">
+					<div class="col-md-3"></div>
+						<div th:if="${param.error}" class="alert alert-danger col-md-6"
+							role="alert">The user name or password you entered is
+							incorrect.</div>
+							<div class="col-md-12"></div>
+							<div class="col-md-3"></div>
+						<div class="col-md-6 ">
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Email"
+									name="email" required="true"></input>
+							</div>
+						</div>
+						<div class="col-md-12"></div>
+							<div class="col-md-3"></div>
+						<div class="col-md-6 ">
+							<div class="form-group">
+								<input type="password" class="form-control"
+									placeholder="Password" name="password" required="true"></input>
+							</div>
+						</div>
+					</div>
+					<div class="form-group animate-box col-md-12" align="center">
+						<input type="submit" value="Login" class="btn btn-primary"></input>
+					</div>
+
+					<div class="form-group animate-box col-md-12" align="center">
+						<p>
+							don't have an account yet <a href="/register">sign up now</a>
+						</p>
+					</div>
+
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

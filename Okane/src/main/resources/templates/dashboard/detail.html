@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout/main">
+<head>
+<title>Detail</title>
+</head>
+<body>
+	<div layout:fragment="content" th:remove="tag">
+		<div class="container">
+			<div class="row ">
+				<div class="col-md-2"></div>
+				<div class="col-md-8">
+					<table class="table table-striped">
+						<tr class="animate-box">
+							<th>Id</th>
+							<th>type</th>
+							<th>Detail</th>
+							<th>Cost</th>
+							<th>Date</th>
+						</tr>
+						<tr th:each="expenditures : ${expenditures}" class="animate-box" >
+							<td th:text="${expenditures.id}"></td>
+							<td th:text="${expenditures.type}"></td>
+							<td th:text="${expenditures.detail}"></td>
+							<td th:text="${expenditures.value}"></td>
+							<td th:text="${expenditures.created}"></td>
+						</tr>
+					</table>
+					<div th:include="common/pagination :: pagination" align="center"
+						class="animate-box"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
