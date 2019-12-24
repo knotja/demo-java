@@ -32,6 +32,15 @@ public class MyUserAuthenticationServiceImpl implements UserAccountService, User
 			throw new UsernameNotFoundException(username);
 		}
 		Set<GrantedAuthority> authorities = new HashSet<>();
+		Set<GrantedAuthority> authorities = new HashSet<>();
+		Set<GrantedAuthority> authorities = new HashSet<>();
+		Set<GrantedAuthority> authorities = new HashSet<>();
+		Set<GrantedAuthority> authorities = new HashSet<>();
+		Set<GrantedAuthority> authorities = new HashSet<>();
+		Set<GrantedAuthority> authorities = new HashSet<>();
+		Set<GrantedAuthority> authorities = new HashSet<>();
+		Set<GrantedAuthority> authorities = new HashSet<>();
+		Set<GrantedAuthority> authorities = new HashSet<>();
 		for (Role role : user.getRoles()) {
 			authorities.add(new SimpleGrantedAuthority(role.getRoleName()));
 		}
