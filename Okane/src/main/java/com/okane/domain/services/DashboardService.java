@@ -87,6 +87,9 @@ public class DashboardService extends UserService {
 			dashboardList[6] = sumU;
 			dashboardList[7] = sumO;
 		}
+		if(1==1){
+			dashboardList[0] = user.getSalary();
+		}
 		return dashboardList;
 	}
 
